@@ -1,0 +1,96 @@
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.container > * {
+    margin: 15px;
+}
+
+.container > *:last-child {
+    margin-right: 0;
+}
+
+body {
+    background-color: #cfe8ff; /* Нежно голубой цвет фона */
+    font-family: Arial, sans-serif;
+}
+
+
+button {
+    background-color: #ffd700; /* Желтый цвет для кнопок */
+    color: #000; /* Черный цвет текста на кнопках */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ffc800; /* Желтый цвет при наведении на кнопки */
+}
+
+#dataContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+}
+
+table, th, td {
+    border: 1px solid #000000;
+}
+
+th, td {
+    padding: 8px;
+}
+
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #000000;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    animation: pulse 1s linear infinite;
+}
+.loader:after {
+    content: '';
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border: 5px solid #000000;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: scaleUp 1s linear infinite;
+}
+
+@keyframes scaleUp {
+    0% { transform: translate(-50%, -50%) scale(0) }
+    60% , 100% { transform: translate(-50%, -50%)  scale(1)}
+}
+@keyframes pulse {
+    0% , 60% , 100%{ transform:  scale(1) }
+    80% { transform:  scale(1.2)}
+}
+
+.hidden {
+    display: none;
+}
